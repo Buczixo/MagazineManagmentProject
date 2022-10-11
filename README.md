@@ -10,6 +10,10 @@ elektronicznych lub nawet we własnym pokoju, po wcześniejszym oznaczeniu pół
 - Tworzenie / usuwanie przedmiotów magazyowanych (towarów)
 - Dodawanie / wyciąganie przedmiotów z magazyów oraz przenoszenie ich pomiędzy magazynami
 - Dodawanie oraz usuwanie użytkowników oraz możliwy podział na role (admin - magazynier itd.)
-- Wydruk przyjęć / wydań oraz stanu magazynu
 - Wyszukiwanie części w magazynie
+
+
+### Możliwy późniejszy rozwój o
+
+- Wydruk przyjęć / wydań oraz stanu magazynu
 - Baza firm dostarczających towar i pracowników odbierających towar
