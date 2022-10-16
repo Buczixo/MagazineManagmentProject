@@ -18,3 +18,6 @@ aktualnego stanu magazynu / magazynów.
 
 - Wydruk przyjęć / wydań oraz stanu magazynu
 - Baza firm dostarczających towar i pracowników odbierających towar
+
+## Interfejs (render)
+![plot](Doc/inter.png)
