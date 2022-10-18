@@ -22,5 +22,5 @@ aktualnego stanu magazynu / magazynów.
 ## **_Interfejs (render)_**
 ![plot](Doc/inter.png)
 
-## **_ Wstępny diagram klas _**
+## **_Wstępny diagram klas_**
 ![plot](Doc/diag.png)
