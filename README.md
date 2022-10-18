@@ -6,7 +6,7 @@ Celem tego projektu jest utworzenie aplikacji, używając języka Python, pozwal
 elektronicznych lub nawet we własnym pokoju, po wcześniejszym oznaczeniu półek/szafek. Musi ona pozwalać na łatwe dodawanie, odejmowanie towarów do danych magazynów, oraz także pozwalać na podgląd stanu magazynu z możliwym wydrukiem do pdf. 
 aktualnego stanu magazynu / magazynów.
 
-## **_ Wymagania _**
+## **_Wymagania :_**
 - Tworzenie / usuwanie przestrzeni magazynowej (półek, szafek, regałów)
 - Tworzenie / usuwanie przedmiotów magazyowanych (towarów)
 - Dodawanie / wyciąganie przedmiotów z magazyów oraz przenoszenie ich pomiędzy magazynami
@@ -14,7 +14,7 @@ aktualnego stanu magazynu / magazynów.
 - Wyszukiwanie części w magazynie oraz podgląd stanu na żywo.
 
 
-### **_ Możliwy późniejszy rozwój o _**
+### **_Możliwy późniejszy rozwój o_**
 
 - Wydruk przyjęć / wydań oraz stanu magazynu
 - Baza firm dostarczających towar i pracowników odbierających towar
