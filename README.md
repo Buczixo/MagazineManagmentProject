@@ -1,12 +1,12 @@
-# Opis Projektu oraz wymagania
+# **_Opis Projektu oraz wymagania_**
 
-## Opis aplikacji
+## **_Opis aplikacji_**
 
 Celem tego projektu jest utworzenie aplikacji, używając języka Python, pozwalającej na utrzymanie porządku w magazynach, na przykład magazynie części
 elektronicznych lub nawet we własnym pokoju, po wcześniejszym oznaczeniu półek/szafek. Musi ona pozwalać na łatwe dodawanie, odejmowanie towarów do danych magazynów, oraz także pozwalać na podgląd stanu magazynu z możliwym wydrukiem do pdf. 
 aktualnego stanu magazynu / magazynów.
 
-## Wymagania:
+## **_Wymagania: _**
 - Tworzenie / usuwanie przestrzeni magazynowej (półek, szafek, regałów)
 - Tworzenie / usuwanie przedmiotów magazyowanych (towarów)
 - Dodawanie / wyciąganie przedmiotów z magazyów oraz przenoszenie ich pomiędzy magazynami
@@ -14,10 +14,13 @@ aktualnego stanu magazynu / magazynów.
 - Wyszukiwanie części w magazynie oraz podgląd stanu na żywo.
 
 
-### Możliwy późniejszy rozwój o
+### **_Możliwy późniejszy rozwój o : _**
 
 - Wydruk przyjęć / wydań oraz stanu magazynu
 - Baza firm dostarczających towar i pracowników odbierających towar
 
-## Interfejs (render)
+## **_Interfejs (render)_**
 ![plot](Doc/inter.png)
+
+## **_ Wstępny diagram klas _**
+![plot](Doc/diag.png)
