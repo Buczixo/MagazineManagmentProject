@@ -1,0 +1,61 @@
+html, body{
+    background-image: linear-gradient(to right top, #DBDBDB, #B8B8B8, #787878, #595959, #3B3B3B);
+    height: 100%;
+    margin: 0 auto;
+}
+.pasek{
+    background-color: #000000;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px;
+    display: block;
+    min-height: 3.66em;
+}
+.lewy{
+    background-color: #3B3B3B;
+    width: 15%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px;
+    float: left;
+    display: block;
+    min-height: 94%;
+}
+.gowny{
+    width: 85%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px;
+    float: left;
+    display: block;
+    min-height: 94%;
+}
+.prawy{
+    background-color: #3B3B3B;
+    width: 15%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px;
+    float: right;
+    display: block;
+    min-height: 94%;
+}
+.opcja{
+    color: white;
+    display: block;
+    float: left;
+    min-height: 6%;
+    width: 12em;
+    padding: 4px;
+    text-align: center;
+}
+.logownie{
+    color: white;
+    display: block;
+    float: right;
+    min-height: 6%;
+    width: 12em;
+    padding: 4px;
+    text-align: center;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
