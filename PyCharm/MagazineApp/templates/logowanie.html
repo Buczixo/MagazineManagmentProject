@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Magazyn</title>
-    <link rel="stylesheet" href="../static/glowna.css">
-    <link rel="stylesheet" href="../static/logowanie.css">
+    <link rel="stylesheet" href="{% static 'glowna.css' %}">
+    <link rel="stylesheet" href="{% static 'logowanie.css' %}">
 </head>
 <body>
     <div class="pasek">
@@ -12,7 +13,7 @@
            <p>04.11.2022 16:53</p>
        </div>
        <div class="logownie">
-           <a href="logowanie.html"><p>Logowanie</p></a>
+           <a href="{% url 'logowanie' %}">Logowanie</a>
        </div>
     </div>
     <div class="gowny" style="width: 100%">

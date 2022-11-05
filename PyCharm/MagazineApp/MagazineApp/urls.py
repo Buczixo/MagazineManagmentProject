@@ -20,4 +20,5 @@ from WebApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main),
+    path('logowanie/', views.logowanie, name='logowanie')
 ]
