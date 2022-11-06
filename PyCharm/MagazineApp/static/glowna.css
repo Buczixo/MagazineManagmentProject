@@ -1,24 +1,26 @@
-html, body{
-    background-image: linear-gradient(to right top, #DBDBDB, #B8B8B8, #787878, #595959, #3B3B3B);
+hhtml, body{
+    background-color: #787878;
     height: 100%;
     margin: 0 auto;
 }
 .pasek{
     background-color: #000000;
     width: 100%;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px;
+    margin: 0px;
+    padding: 0px;
     display: block;
+    position: sticky;
     min-height: 3.66em;
 }
 .lewy{
     background-color: #3B3B3B;
-    width: 15%;
+    width: 17em;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px;
     float: left;
-    display: block;
+    display: inline;
     min-height: 94%;
+    position: absolute;
 }
 .gowny{
     width: 85%;
@@ -27,6 +29,7 @@ html, body{
     float: left;
     display: block;
     min-height: 94%;
+    position: static;
 }
 .prawy{
     background-color: #3B3B3B;
@@ -37,7 +40,7 @@ html, body{
     display: block;
     min-height: 94%;
 }
-.opcja{
+.g_opcja{
     color: white;
     display: block;
     float: left;
@@ -46,16 +49,49 @@ html, body{
     padding: 4px;
     text-align: center;
 }
-.logownie{
+.logowanie{
     color: white;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     float: right;
     min-height: 6%;
     width: 12em;
     padding: 4px;
-    text-align: center;
 }
 a{
     color: white;
     text-decoration: none;
+}
+.menu{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    width: 100%;
+    height: 3em;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.opcje{
+    margin-top: 4em;
+}
+.submenu{
+    list-style: none;
+    margin-left: 100%;
+    margin-top: -14%;
+    padding: 0px;
+    display: none;
+    position: absolute;
+}
+.menu > li:hover > .submenu{
+    display: block;
+}
+.submenu li{
+    background-color: black;
+    width: 17em;
+    min-height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

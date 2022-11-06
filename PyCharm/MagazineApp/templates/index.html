@@ -8,26 +8,58 @@
 </head>
 <body>
     <div class="pasek">
-       <div class="opcja">
+       <div class="g_opcja">
            <p>04.11.2022 16:53</p>
        </div>
-       <div class="opcja">
-           <p>Towar</p>
-       </div>
-       <div class="opcja">
-           <p>Raport</p>
-       </div>
-       <div class="opcja">
-           <p></p>
-       </div>
-       <div class="logownie">
-           <button type="button">
-               <a href="{% url 'logowanie' %}">Logowanie</a>
-           </button>
+       <div class="logowanie">
+               <p><a href="{% url 'logowanie' %}">Logowanie</a></p>
        </div>
     </div>
     <div class="lewy">
-        
+             <ul class="menu">
+                <li class="opcje">
+                    <a>Towar</a>
+                        <ol class="submenu">
+                            <li>
+                                <a>Odbiór</a>
+                            </li>
+                            <li>
+                                <a>Wydanie</a>
+                            </li>
+                            <li>
+                                <a>Przerzucenie</a>
+                            </li>
+                        </ol>
+                </li>
+                <li class="opcje">
+                    <a>Magazyn</a>
+                    <ol class="submenu">
+                            <li>
+                                <a>Utworzenie magazynu</a>
+                            </li>
+                            <li>
+                                <a>Wydruk stanu magazynu</a>
+                            </li>
+                            <li>
+                                <a>Wyrzukanie towaru</a>
+                            </li>
+                    </ol>
+                </li>
+                <li class="opcje">
+                    <a>Baza</a>
+                    <ol class="submenu">
+                            <li>
+                                <a>Baza towartów</a>
+                            </li>
+                            <li>
+                                <a>Baza dostawców</a>
+                            </li>
+                            <li>
+                                <a>Baza pracowników</a>
+                            </li>
+                    </ol>
+                </li>
+            </ul>
     </div>
     <div class="gowny">
         
