@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magazyn</title>
+    <link rel="stylesheet" href="{% static 'glowna.css' %}">
+</head>
+<body>
+    <div class="pasek">
+       <div class="g_opcja">
+           <p>04.11.2022 16:53</p>
+       </div>
+       <div class="logowanie">
+               <p><a href="{% url 'logowanie' %}">Logowanie</a></p>
+       </div>
+    </div>
+    <div class="lewy">
+             <ul class="menu">
+                <li class="opcje">
+                    <a>Towar</a>
+                        <ol class="submenu">
+                            <li>
+                                <a href="{% url 'odbior' %}">Odbiór</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'wydanie' %}">Wydanie</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'przerzucenie' %}">Przerzucenie</a>
+                            </li>
+                        </ol>
+                </li>
+                <li class="opcje">
+                    <a>Magazyn</a>
+                    <ol class="submenu">
+                            <li>
+                                <a href="{% url 'u_magazynu' %}">Utworzenie magazynu</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'w_magazynu' %}">Wydruk stanu magazynu</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'wyszukanie' %}">Wyrzukanie towaru</a>
+                            </li>
+                    </ol>
+                </li>
+                <li class="opcje">
+                    <a>Baza</a>
+                    <ol class="submenu">
+                            <li>
+                                <a href="{% url 'b_towarow' %}">Baza towartów</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'b_dostawcow' %}">Baza dostawców</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'b_pracownikow' %}">Baza pracowników</a>
+                            </li>
+                    </ol>
+                </li>
+            </ul>
+    </div>
+    <div class="gowny">
+        
+    </div>
+</body>
+</html>
