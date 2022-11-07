@@ -20,5 +20,14 @@ from WebApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main),
-    path('logowanie/', views.logowanie, name='logowanie')
+    path('logowanie/', views.logowanie, name='logowanie'),
+    path('odbior/', views.odbior, name='odbior'),
+    path('wydanie/', views.wydanie, name='wydanie'),
+    path('przerzucenie/', views.przerzucenie, name='przerzucenie'),
+    path('wyszukanie/', views.wyszukanie, name='wyszukanie'),
+    path('utworzenie_magazynu/', views.u_magazynu, name='u_magazynu'),
+    path('wydruk_magazynu/', views.w_magazynu, name='w_magazynu'),
+    path('baza_dostawcow/', views.b_dostawcow, name='b_dostawcow'),
+    path('baza_pracownikow/', views.b_pracownikow, name='b_pracownikow'),
+    path('baza_towarow/', views.b_towarow, name='b_towarow')
 ]

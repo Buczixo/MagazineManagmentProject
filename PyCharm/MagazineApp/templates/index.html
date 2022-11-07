@@ -21,13 +21,13 @@
                     <a>Towar</a>
                         <ol class="submenu">
                             <li>
-                                <a>Odbiór</a>
+                                <a href="{% url 'odbior' %}">Odbiór</a>
                             </li>
                             <li>
-                                <a>Wydanie</a>
+                                <a href="{% url 'wydanie' %}">Wydanie</a>
                             </li>
                             <li>
-                                <a>Przerzucenie</a>
+                                <a href="{% url 'przerzucenie' %}">Przerzucenie</a>
                             </li>
                         </ol>
                 </li>
@@ -35,13 +35,13 @@
                     <a>Magazyn</a>
                     <ol class="submenu">
                             <li>
-                                <a>Utworzenie magazynu</a>
+                                <a href="{% url 'u_magazynu' %}">Utworzenie magazynu</a>
                             </li>
                             <li>
-                                <a>Wydruk stanu magazynu</a>
+                                <a href="{% url 'w_magazynu' %}">Wydruk stanu magazynu</a>
                             </li>
                             <li>
-                                <a>Wyrzukanie towaru</a>
+                                <a href="{% url 'wyszukanie' %}">Wyrzukanie towaru</a>
                             </li>
                     </ol>
                 </li>
@@ -49,13 +49,13 @@
                     <a>Baza</a>
                     <ol class="submenu">
                             <li>
-                                <a>Baza towartów</a>
+                                <a href="{% url 'b_towarow' %}">Baza towartów</a>
                             </li>
                             <li>
-                                <a>Baza dostawców</a>
+                                <a href="{% url 'b_dostawcow' %}">Baza dostawców</a>
                             </li>
                             <li>
-                                <a>Baza pracowników</a>
+                                <a href="{% url 'b_pracownikow' %}">Baza pracowników</a>
                             </li>
                     </ol>
                 </li>
