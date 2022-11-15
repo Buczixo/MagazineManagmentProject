@@ -1,3 +1,5 @@
+# sqlite https://www.sqlitetutorial.net
+
 from django.shortcuts import render
 
 # import formy kreacji użytkownika, tutorial
@@ -16,6 +18,7 @@ def rejestracja(request):
         form = ForDodPrac(request.POST)
         if form.is_valid():
             form.save()
+
     return render(request, 'rejestracja.html', context)
 def main(request):
     return render(request, 'index.html')
