@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magazyn</title>
+    <link rel="stylesheet" href="{% static 'glowna.css' %}">
+    <link rel="stylesheet" href="{% static 'logowanie.css' %}">
+
+    <script type="text/javascript">
+                    //funkcja tworząca zegar
+                   function zegar(){
+                       //pobieranie czasu
+                       var data = new Date();
+                       var dzien = data.getDate();
+                       var miesiac = data.getMonth()+1;
+                       var rok = data.getFullYear();
+                       var godzina = data.getHours();
+                       var minuta = data.getMinutes();
+                       var sekunda = data.getSeconds();
+
+                       //formatowanie czasu
+                       if (godzina < 10) {
+                            godzina = "0" + godzina;
+                        }
+                       if (minuta < 10) {
+                           minuta = "0" + minuta;
+                       }
+                       if (sekunda < 10) {
+                           sekunda = "0" + sekunda;
+                       }
+
+                       //wstawianie zegara w diva z id zegar
+                       document.getElementById("zegar").innerHTML = dzien+"."+miesiac+"."+rok+" "+godzina+":"+minuta+":"+sekunda;
+                        //opóżnienie funkcji
+                       setTimeout(zegar,1000);
+                   }
+                   //załadowanie zegara po wczytaniu strony
+                   window.addEventListener("load", zegar);
+               </script>
+</head>
+
+<body>
+    <div class="pasek">
+       <div class="g_opcja">
+           <p>
+                <div id="zegar">
+                </div>
+           </p>
+       </div>
+       <div class="logowanie">
+          <p><a href="{% url 'logowanie' %}">Logowanie</a></p>
+       </div>
+    </div>
+    <div class="gowny" style="width: 100%">
+        <div id="oknoR">
+            {{ form.errors }}
+
+            <form method="POST" action="">
+                <!--Token django żeby nie wypluwał błędu braku tokena-->
+                {% csrf_token %}
+                <!--forma tworzenia użytkowanika-->
+
+                {{ form.username.label }}
+                {{ form.username }}
+
+                {{ form.email.label }}
+                {{ form.email }}
+
+                {{ form.password1.label }}
+                {{ form.password1 }}
+
+                {{ form.password2.label }}
+                {{ form.password2 }}
+                 <button type="submit" name="UserCreate"> Dodaj użytkownika </button>
+
+            </form>
+        </div>
+
+    </div>
+</body>
