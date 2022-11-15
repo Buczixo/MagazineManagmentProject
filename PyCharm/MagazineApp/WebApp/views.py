@@ -1,6 +1,22 @@
 from django.shortcuts import render
 
+# import formy kreacji użytkownika, tutorial
+# https://www.youtube.com/watch?v=tUqUdu0Sjyc
+from django.contrib.auth.forms import UserCreationForm
+#import zmienionego formularza
+from templates.forms import ForDodPrac
+
 # Create your views here.
+
+def rejestracja(request):
+    form = ForDodPrac()
+    context = {'form':form}
+    # Zapis danych z formularza jeśli formularz jest poprawny oraz auto hashowanie hasła
+    if request.method == 'POST':
+        form = ForDodPrac(request.POST)
+        if form.is_valid():
+            form.save()
+    return render(request, 'rejestracja.html', context)
 def main(request):
     return render(request, 'index.html')
 def logowanie(request):

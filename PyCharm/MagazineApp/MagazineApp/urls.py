@@ -29,5 +29,6 @@ urlpatterns = [
     path('wydruk_magazynu/', views.w_magazynu, name='w_magazynu'),
     path('baza_dostawcow/', views.b_dostawcow, name='b_dostawcow'),
     path('baza_pracownikow/', views.b_pracownikow, name='b_pracownikow'),
-    path('baza_towarow/', views.b_towarow, name='b_towarow')
+    path('baza_towarow/', views.b_towarow, name='b_towarow'),
+    path('rejestracja/', views.rejestracja, name='rejestracja')
 ]
