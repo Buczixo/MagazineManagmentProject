@@ -43,6 +43,10 @@ def logowanie(request):
     context = {}
     return render(request, 'logowanie.html')
 
+def wylogowanie(request):
+    logout(request)
+    return redirect('logowanie')
+
 def odbior(request) :
     return render(request, 'odbior.html')
 

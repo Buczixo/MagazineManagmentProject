@@ -12,6 +12,16 @@ hhtml, body{
     position: sticky;
     min-height: 3.66em;
 }
+.HelloUser{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    min-height: 6%;
+    width: 12em;
+    padding: 4px;
+}
 .lewy{
     background-color: #3B3B3B;
     width: 17em;

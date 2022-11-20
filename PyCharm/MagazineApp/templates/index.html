@@ -44,11 +44,16 @@
            <p>
                 <div id="zegar">
                 </div>
+
            </p>
        </div>
+
        <div class="logowanie">
-               <p><a href="{% url 'logowanie' %}">Logowanie</a></p>
+               <p><a href="{% url 'wylogowanie' %}">Wyloguj</a></p>
        </div>
+          <div class = "HelloUser">
+              <p><span> Użytkownik : {{ request.user }} </span></p>
+          </div>
     </div>
     <div class="lewy">
              <ul class="menu">
