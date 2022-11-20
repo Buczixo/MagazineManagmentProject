@@ -19,13 +19,18 @@
     <div class="gowny" style="width: 100%">
         <div id="okno">
             <form action="" method="POST" >
+                {% csrf_token %}
                 <p>Login:</p>
-                <input>
+                <input name="username">
                 <p>Hasło:</p>
-                <input>
+                <input name="password">
                 <br>
                 <button>Zaloguj się</button>
             </form>
+
+            {% for message in messages %}
+                <p id="messages">{{ message }}</p>
+            {% endfor %}
         </div>
     </div>
 </body>
