@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magazyn</title>
+    <link rel="stylesheet" href="{% static 'glowna.css' %}">
+</head>
+<body>
+    <div class="pasek">
+       <div class="g_opcja">
+           <p>04.11.2022 16:53</p>
+       </div>
+       <div class="logowanie">
+               <p><a href="{% url 'logowanie' %}">Logowanie</a></p>
+       </div>
+    </div>
+
+    <div class="gowny" style="width: 100%">
+        <div id="okno">
+        <form action="" method="POST" >
+                {% csrf_token %}
+                <p>ID nowego magazynu</p>
+                <input name="idMagazynu">
+                <button>Utwóż magazyn</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -12,6 +12,9 @@ from templates.forms import ForDodPrac
 # import biblioteki restrykcji otwierania
 from django.contrib.auth.decorators import login_required
 
+# import dla modeli i ich formsów
+from .forms import MagazynForm, OpakowanieForm, ProduktForm
+
 
 # Create your views here.
 
@@ -82,6 +85,20 @@ def przerzucenie(request):
 @login_required(login_url='logowanie')
 def u_magazynu(request):
     return render(request, 'u_magazynu.html')
+
+
+def testBazyDanych(request):
+
+    form = MagazynForm()
+    context = {'form': form}
+
+    if request.method == 'POST':
+        form = MagazynForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('w_magazynu')
+
+    return render(request, 'u_magazynuTEST.html', context)
 
 
 @login_required(login_url='logowanie')
