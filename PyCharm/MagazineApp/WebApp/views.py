@@ -37,7 +37,7 @@ def rejestracja(request):
 
 
 @login_required(login_url='logowanie')
-def main(request):
+def home(request):
     return render(request, 'index.html')
 
 

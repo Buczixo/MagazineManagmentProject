@@ -24,7 +24,7 @@ hhtml, body{
 }
 .lewy{
     background-color: #3B3B3B;
-    width: 17em;
+    width: 15%;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px;
     float: left;
@@ -33,13 +33,14 @@ hhtml, body{
     position: absolute;
 }
 .gowny{
+    text-align: center;
     width: 85%;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px;
-    float: left;
-    display: block;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    display: inline;
     min-height: 94%;
-    position: static;
+    position: relative;
 }
 .prawy{
     background-color: #3B3B3B;
