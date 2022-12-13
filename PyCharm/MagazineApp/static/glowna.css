@@ -24,7 +24,7 @@ hhtml, body{
 }
 .lewy{
     background-color: #3B3B3B;
-    width: 15%;
+    width: 7%;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px;
     float: left;
@@ -34,7 +34,7 @@ hhtml, body{
 }
 .gowny{
     text-align: center;
-    width: 85%;
+    width: 93%;
     margin: 0px;
     padding: 0px;
     float: right;
@@ -87,20 +87,27 @@ a{
 .opcje{
     margin-top: 4em;
 }
+/*https://stackoverflow.com/questions/20733255/delay-closing-of-submenu-on-a-css-menu-made-exclusively-with-divs*/
 .submenu{
     list-style: none;
     margin-left: 100%;
     margin-top: -14%;
     padding: 0px;
-    display: none;
+    visibility: hidden;
     position: absolute;
+    -moz-transition-property: visibility;
+    -moz-transition-duration: 0.1s;
+    -webkit-transition-property: visibility;
+    -webkit-transition-duration: 0.5s;
+    transition-property: visibility;
+    transition-duration: 0.5s;
 }
 .menu > li:hover > .submenu{
-    display: block;
+    visibility: visible;
 }
 .submenu li{
     background-color: black;
-    width: 17em;
+    width: 7em;
     min-height: 4em;
     display: flex;
     justify-content: center;

@@ -6,7 +6,7 @@ from .models import Magazyn, Produkt, Opakowanie
 # Register your models here.
 @admin.register(Magazyn)
 class AdmMag (admin.ModelAdmin):
-    list_display = ("idMagazynu", "nrOpakowania")
+    display = ("idMagazynu")
 
 @admin.register(Produkt)
 class AdmPro (admin.ModelAdmin):
@@ -14,4 +14,4 @@ class AdmPro (admin.ModelAdmin):
 
 @admin.register(Opakowanie)
 class AdmOpa (admin.ModelAdmin):
-    list_display = ("idPudelka", "towar")
+    list_display = ("idPudelka", "towar", "magazyn")

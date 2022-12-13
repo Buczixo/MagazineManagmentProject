@@ -14,14 +14,15 @@ from django.contrib.auth.decorators import login_required
 
 # import dla modeli i ich formsów
 from .forms import MagazynForm, OpakowanieForm, ProduktForm
+from .models import Opakowanie, Produkt, Magazyn
 
 
 # Create your views here.
 
 def rejestracja(request):
-    if request.user.is_authenticated :
+    if request.user.is_authenticated:
         return redirect('glowna')
-    else :
+    else:
         form = ForDodPrac()
         context = {'form': form}
         # Zapis danych z formularza jeśli formularz jest poprawny oraz auto hashowanie hasła
@@ -42,9 +43,9 @@ def home(request):
 
 
 def logowanie(request):
-    if request.user.is_authenticated :
+    if request.user.is_authenticated:
         return redirect('home')
-    else :
+    else:
         if request.method == 'POST':
             username = request.POST.get('username')
             password = request.POST.get('password')
@@ -84,11 +85,45 @@ def przerzucenie(request):
 
 @login_required(login_url='logowanie')
 def u_magazynu(request):
-    return render(request, 'u_magazynu.html')
+    form = MagazynForm()
+    context = {'form': form}
+    if request.method == 'POST':
+        form = MagazynForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return render(request, 'u_magazynu.html', context)
+
+
+@login_required(login_url='logowanie')
+def u_towaru(request):
+    form = ProduktForm()
+    context = {'form': form}
+    if request.method == 'POST':
+        form = ProduktForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return render(request, 'u_towarow.html', context)
+
+
+# def rejestracja(request):
+#     if request.user.is_authenticated :
+#         return redirect('glowna')
+#     else :
+#         form = ForDodPrac()
+#         context = {'form': form}
+#         # Zapis danych z formularza jeśli formularz jest poprawny oraz auto hashowanie hasła
+#         if request.method == 'POST':
+#             form = ForDodPrac(request.POST)
+#             if form.is_valid():
+#                 form.save()
+#                 user = form.cleaned_data.get('username')
+#                 messages.success(request, 'Użytkownik %s utworzony poprawnie' % user)
+#                 return redirect('logowanie')
+#
+#     return render(request, 'rejestracja.html', context)
 
 
 def testBazyDanych(request):
-
     form = MagazynForm()
     context = {'form': form}
 
