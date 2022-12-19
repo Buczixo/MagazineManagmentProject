@@ -138,7 +138,8 @@ def testBazyDanych(request):
 
 @login_required(login_url='logowanie')
 def w_magazynu(request):
-    return render(request, 'w_magazynu.html')
+    data = Magazyn.objects.all()
+    return render(request, 'w_magazynu.html', {'data': data})
 
 
 @login_required(login_url='logowanie')
@@ -148,7 +149,8 @@ def wyszukanie(request):
 
 @login_required(login_url='logowanie')
 def b_towarow(request):
-    return render(request, 'b_towarow.html')
+    data = Produkt.objects.all()
+    return render(request, 'b_towarow.html', {'data': data})
 
 
 @login_required(login_url='logowanie')

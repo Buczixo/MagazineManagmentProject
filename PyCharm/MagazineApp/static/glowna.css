@@ -3,6 +3,12 @@ hhtml, body{
     height: 100%;
     margin: 0 auto;
 }
+table, th, td {
+    margin: 10px auto;
+    padding: 5px;
+    border: 2px solid;
+    border-collapse: collapse;
+}
 .pasek{
     background-color: #000000;
     width: 100%;
@@ -31,6 +37,7 @@ hhtml, body{
     display: inline;
     min-height: 94%;
     position: absolute;
+    z-index : 10;
 }
 .gowny{
     text-align: center;
@@ -95,6 +102,7 @@ a{
     padding: 0px;
     visibility: hidden;
     position: absolute;
+    z-index: 20;
     -moz-transition-property: visibility;
     -moz-transition-duration: 0.1s;
     -webkit-transition-property: visibility;
@@ -110,6 +118,7 @@ a{
     width: 7em;
     min-height: 4em;
     display: flex;
+    z-index : 20;
     justify-content: center;
     align-items: center;
 }

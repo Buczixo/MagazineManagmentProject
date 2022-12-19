@@ -1,5 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+    <table>
+        <thead>
+            <th>TOWAR</th>
+            <th>Cena Brutto</th>
+            <th>Cena Netto</th>
+            <th>Stawka VAT</th>
+            <th>Typ ilośći</th>
+        </thead>
+ {% for k in data  %}
+            <tr>
+                <td>{{k.nazwaProduktu}}</td>
+                <td>{{k.cenaBrutto}}</td>
+                <td>{{k.cenaNetto}}</td>
+                <td>{{k.stawkaVat}}</td>
+                <td>{{k.typIlosci}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
 <a href="{% url 'u_towaru' %}">Dodaj towar do bazy</a>
 {% endblock content %}

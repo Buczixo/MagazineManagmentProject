@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <table border="3">
+        <thead>
+                <th>MAGAZYN</th>
+        </thead>
+ {% for k in data  %}
+            <tr>
+                <td>{{k.idMagazynu}}</td>
 
+            </tr>
+            {% endfor %}
+        </table>
 {% endblock content %}
