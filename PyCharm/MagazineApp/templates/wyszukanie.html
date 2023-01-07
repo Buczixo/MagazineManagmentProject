@@ -1,5 +1,30 @@
 {% extends "base.html" %}
-
+<!--https://www.youtube.com/watch?v=iFlSrEuyl8I-->
 {% block content %}
-
+    <div class="search-container">
+    <form>
+        <input type="text" placeholder="Search.." name="q">
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+<table class="table">
+  <thead>
+            <th>TOWAR</th>
+            <th>Cena Brutto</th>
+            <th>Cena Netto</th>
+            <th>Stawka VAT</th>
+            <th>Typ ilośći</th>
+        </thead>
+  <tbody>
+  {% for k in data %}
+    <tr>
+        <td>{{k.nazwaProduktu}}</td>
+        <td>{{k.cenaBrutto}}</td>
+        <td>{{k.cenaNetto}}</td>
+        <td>{{k.stawkaVat}}</td>
+        <td>{{k.typIlosci}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
 {% endblock content %}

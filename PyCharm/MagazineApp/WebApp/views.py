@@ -144,7 +144,12 @@ def w_magazynu(request):
 
 @login_required(login_url='logowanie')
 def wyszukanie(request):
-    return render(request, 'wyszukanie.html')
+    if 'q' in request.GET:
+        q = request.GET['q']
+        data = Produkt.objects.filter(nazwaProduktu__contains=q)
+    else :
+        data = Produkt.objects.all()
+    return render(request, 'wyszukanie.html', {'data': data})
 
 
 @login_required(login_url='logowanie')
