@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 # Create your models here.
 
@@ -53,3 +54,22 @@ class Opakowanie(models.Model):
 
     class Meta:
         verbose_name_plural = "Opakowania"
+
+
+TYPE_OF_DOCUMENT = [
+    ('Dostawa', 'Dostawa'),
+    ('Wydanie', 'Wydanie'),
+]
+class Dokument(models.Model):
+    NrDokumentu = models.IntegerField(primary_key=True)
+    sumaBrutto = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    sumaNetto = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    typ = models.CharField(max_length=10, choices=TYPE_OF_DOCUMENT, default=' ')
+    data = models.DateField(default=date.today)
+
+    def __str__(self):
+        return str(self.NrDokumentu)
+
+    class Meta:
+        # https://docs.djangoproject.com/en/4.1/ref/models/options/#verbose-name
+        verbose_name_plural = "Dokumenty"

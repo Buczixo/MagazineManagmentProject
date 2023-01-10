@@ -13,16 +13,17 @@ from templates.forms import ForDodPrac
 from django.contrib.auth.decorators import login_required
 
 # import dla modeli i ich formsów
-from .forms import MagazynForm, OpakowanieForm, ProduktForm
-from .models import Opakowanie, Produkt, Magazyn
+from .forms import MagazynForm, OpakowanieForm, ProduktForm, DocumentForm
+from .models import Opakowanie, Produkt, Magazyn, Dokument
+
+# https://stackoverflow.com/questions/23139657/django-get-all-users
+from django.contrib.auth import get_user_model
 
 
 # Create your views here.
 
 def rejestracja(request):
-    if request.user.is_authenticated:
-        return redirect('glowna')
-    else:
+    if request.user.is_superuser:
         form = ForDodPrac()
         context = {'form': form}
         # Zapis danych z formularza jeśli formularz jest poprawny oraz auto hashowanie hasła
@@ -33,6 +34,9 @@ def rejestracja(request):
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Użytkownik %s utworzony poprawnie' % user)
                 return redirect('logowanie')
+
+    else:
+        return redirect('home')
 
     return render(request, 'rejestracja.html', context)
 
@@ -69,14 +73,26 @@ def wylogowanie(request):
 
 
 @login_required(login_url='logowanie')
-def odbior(request):
-    return render(request, 'odbior.html')
+def dostawa(request):
+    data = Dokument.objects.filter(typ = 'Dostawa')
+    return render(request, 'dostawa.html', {'data': data})
 
 
 @login_required(login_url='logowanie')
 def wydanie(request):
-    return render(request, 'wydanie.html')
+    data = Dokument.objects.filter(typ = 'Wydanie')
+    return render(request, 'wydanie.html', {'data': data})
 
+
+@login_required(login_url='logowanie')
+def u_dokumentu(request):
+    form = DocumentForm()
+    context = {'form': form}
+    if request.method == 'POST':
+        form = DocumentForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return render(request, 'u_dokumentu.html', context)
 
 @login_required(login_url='logowanie')
 def przerzucenie(request):
@@ -123,18 +139,6 @@ def u_towaru(request):
 #     return render(request, 'rejestracja.html', context)
 
 
-def testBazyDanych(request):
-    form = MagazynForm()
-    context = {'form': form}
-
-    if request.method == 'POST':
-        form = MagazynForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('w_magazynu')
-
-    return render(request, 'u_magazynuTEST.html', context)
-
 
 @login_required(login_url='logowanie')
 def w_magazynu(request):
@@ -160,9 +164,13 @@ def b_towarow(request):
 
 @login_required(login_url='logowanie')
 def b_dostawcow(request):
-    return render(request, 'b_dostawcow.html')
+    User = get_user_model()
+    data = User.objects.all()
+    return render(request, 'b_dostawcow.html', {'data': data})
 
 
 @login_required(login_url='logowanie')
 def b_pracownikow(request):
-    return render(request, 'b_pracownikow.html')
+    User = get_user_model()
+    data = User.objects.all()
+    return render(request, 'b_pracownikow.html', {'data': data})

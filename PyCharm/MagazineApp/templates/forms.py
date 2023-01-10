@@ -12,7 +12,7 @@ class ForDodPrac(UserCreationForm):
     class Meta:
         model = User
         # https://docs.djangoproject.com/en/1.10/topics/forms/modelforms/#overriding-the-default-fields
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2', 'groups']
         labels = {
             'username': 'Nazwa Użytkownika :',
             'email': 'Email służbowy :',

@@ -1,5 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <table>
+        <thead>
+            <th>Pracownik</th>
+            <th>Nr. telefonu</th>
+            <th>Pozycja</th>
+        </thead>
+ {% for k in data  %}
+            <tr>
+                <td>{{k.username}}</td>
+                <td>{{k.groups}}</td>
+                <td></td>
 
+            </tr>
+            {% endfor %}
+        </table>
+<a href="{% url 'rejestracja' %}">Dodaj pracownika</a>
 {% endblock content %}

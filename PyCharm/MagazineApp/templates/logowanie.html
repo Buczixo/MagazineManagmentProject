@@ -6,14 +6,49 @@
     <title>Magazyn</title>
     <link rel="stylesheet" href="{% static 'glowna.css' %}">
     <link rel="stylesheet" href="{% static 'logowanie.css' %}">
+    <script type="text/javascript">
+                    //funkcja tworząca zegar
+                   function zegar(){
+                       //pobieranie czasu
+                       var data = new Date();
+                       var dzien = data.getDate();
+                       var miesiac = data.getMonth()+1;
+                       var rok = data.getFullYear();
+                       var godzina = data.getHours();
+                       var minuta = data.getMinutes();
+                       var sekunda = data.getSeconds();
+
+                       //formatowanie czasu
+                       if (godzina < 10) {
+                            godzina = "0" + godzina;
+                        }
+                       if (minuta < 10) {
+                           minuta = "0" + minuta;
+                       }
+                       if (sekunda < 10) {
+                           sekunda = "0" + sekunda;
+                       }
+
+                       //wstawianie zegara w diva z id zegar
+                       document.getElementById("zegar").innerHTML = dzien+"."+miesiac+"."+rok+" "+godzina+":"+minuta+":"+sekunda;
+                        //opóżnienie funkcji
+                       setTimeout(zegar,1000);
+                   }
+                   //załadowanie zegara po wczytaniu strony
+                   window.addEventListener("load", zegar);
+               </script>
 </head>
 <body>
     <div class="pasek">
        <div class="g_opcja">
-           <p>04.11.2022 16:53</p>
+          <p>
+                <div id="zegar">
+                </div>
+
+           </p>
        </div>
        <div class="logowanie">
-          <p><a href="{% url 'rejestracja' %}">Rejestracja</a></p>
+         <!-- <p><a href="{% url 'rejestracja' %}">Rejestracja</a></p> -->
        </div>
     </div>
     <div class="gowny" style="width: 100%">

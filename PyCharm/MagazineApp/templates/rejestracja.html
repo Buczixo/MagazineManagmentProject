@@ -48,8 +48,8 @@
                 </div>
            </p>
        </div>
-       <div class="logowanie">
-          <p><a href="{% url 'logowanie' %}">Logowanie</a></p>
+        <div class="logowanie">
+               <p><a href="{% url 'home' %}">Powrót na stronę główną</a></p>
        </div>
     </div>
     <div class="gowny" style="width: 100%">
@@ -72,6 +72,9 @@
 
                 {{ form.password2.label }}
                 {{ form.password2 }}
+
+                {{ form.groups }}
+
                 {{ form.errors }}
                 <br>
                  <input type="submit" name="UserCreate">

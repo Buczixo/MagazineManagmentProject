@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="oknoR">
+    <form action="" method="POST" >
+        {% csrf_token %}
+        {{ form }}
+        <button>Utwóż dokument</button>
+
+    </form>
+</div>
+{% endblock content %}

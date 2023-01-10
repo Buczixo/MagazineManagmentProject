@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Produkt, Opakowanie, Magazyn
+from .models import Produkt, Opakowanie, Magazyn, Dokument
 
 # tutorial https://docs.djangoproject.com/en/4.1/topics/forms/modelforms/
 # Od tego miejsca zaczynają się formularze do dodawania danych do bazy danych
@@ -21,3 +21,7 @@ class MagazynForm (ModelForm):
         managed = False
         db_table = "entities_entity"
 
+class DocumentForm (ModelForm):
+    class Meta:
+        model = Dokument
+        fields = '__all__'
