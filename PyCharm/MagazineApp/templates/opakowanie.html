@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table border="3">
+        <thead>
+            <th>OPAKOWANIE</th>
+            <th>TOWAR</th>
+            <th>Ilość</th>
+            <th>Magazyn</th>
+
+        </thead>
+ {% for k in data  %}
+            <tr>
+                <td>{{k.idPudelka}}</td>
+                <td>{{k.towar}}</td>
+                <td>{{k.iloscProduktu}}</td>
+                <td>{{k.magazyn}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    <a href="{% url 'u_opakowanie' %}">Dodaj opakowanie do bazy</a>
+{% endblock content %}

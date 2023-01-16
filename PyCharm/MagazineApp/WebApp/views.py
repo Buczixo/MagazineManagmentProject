@@ -74,13 +74,13 @@ def wylogowanie(request):
 
 @login_required(login_url='logowanie')
 def dostawa(request):
-    data = Dokument.objects.filter(typ = 'Dostawa')
+    data = Dokument.objects.filter(typ='Dostawa')
     return render(request, 'dostawa.html', {'data': data})
 
 
 @login_required(login_url='logowanie')
 def wydanie(request):
-    data = Dokument.objects.filter(typ = 'Wydanie')
+    data = Dokument.objects.filter(typ='Wydanie')
     return render(request, 'wydanie.html', {'data': data})
 
 
@@ -93,6 +93,7 @@ def u_dokumentu(request):
         if form.is_valid():
             form.save()
     return render(request, 'u_dokumentu.html', context)
+
 
 @login_required(login_url='logowanie')
 def przerzucenie(request):
@@ -139,7 +140,6 @@ def u_towaru(request):
 #     return render(request, 'rejestracja.html', context)
 
 
-
 @login_required(login_url='logowanie')
 def w_magazynu(request):
     data = Magazyn.objects.all()
@@ -151,7 +151,7 @@ def wyszukanie(request):
     if 'q' in request.GET:
         q = request.GET['q']
         data = Produkt.objects.filter(nazwaProduktu__contains=q)
-    else :
+    else:
         data = Produkt.objects.all()
     return render(request, 'wyszukanie.html', {'data': data})
 
@@ -174,3 +174,20 @@ def b_pracownikow(request):
     User = get_user_model()
     data = User.objects.all()
     return render(request, 'b_pracownikow.html', {'data': data})
+
+
+@login_required(login_url='logowanie')
+def opakowanie(request):
+    data = Opakowanie.objects.all()
+    return render(request, 'opakowanie.html', {'data': data})
+
+
+@login_required(login_url='logowanie')
+def u_opakowanie(request):
+    form = OpakowanieForm()
+    context = {'form': form}
+    if request.method == 'POST':
+        form = OpakowanieForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return render(request, 'u_opakowanie.html', context)

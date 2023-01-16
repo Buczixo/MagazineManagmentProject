@@ -33,5 +33,7 @@ urlpatterns = [
     path('baza_towarow/', views.b_towarow, name='b_towarow'),
     path('rejestracja/', views.rejestracja, name='rejestracja'),
     path('utowaru/', views.u_towaru, name='u_towaru'),
-    path('uDokumentu/', views.u_dokumentu, name='u_dokumentu')
+    path('uDokumentu/', views.u_dokumentu, name='u_dokumentu'),
+    path('Opakowanie/', views.opakowanie, name='opakowanie'),
+    path('uOpakowanie/', views.u_opakowanie, name='u_opakowanie'),
 ]
