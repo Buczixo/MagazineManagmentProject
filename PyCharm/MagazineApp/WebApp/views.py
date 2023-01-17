@@ -95,9 +95,9 @@ def u_dokumentu(request):
     return render(request, 'u_dokumentu.html', context)
 
 
-@login_required(login_url='logowanie')
-def przerzucenie(request):
-    return render(request, 'przerzucenie.html')
+# @login_required(login_url='logowanie')
+# def przerzucenie(request):
+#     return render(request, 'przerzucenie.html')
 
 
 @login_required(login_url='logowanie')
