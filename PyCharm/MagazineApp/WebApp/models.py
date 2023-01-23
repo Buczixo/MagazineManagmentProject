@@ -67,6 +67,8 @@ class Dokument(models.Model):
     typ = models.CharField(max_length=10, choices=TYPE_OF_DOCUMENT, default=' ')
     data = models.DateField(default=date.today)
 
+    #dodac zagubioną listę towarów i przeliczanie cen
+
     def __str__(self):
         return str(self.NrDokumentu)
 
