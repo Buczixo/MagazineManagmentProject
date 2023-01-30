@@ -23,4 +23,4 @@ aktualnego stanu magazynu / magazynów.
 ![plot](Doc/inter.png)
 
 ## **_Wstępny diagram klas_**
-![plot](Doc/diag.png)
+![plot](Doc/obraz_2023-01-30_183930097.png)
